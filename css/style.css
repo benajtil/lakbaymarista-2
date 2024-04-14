@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    background-color: rgb(192, 176, 176);
+}
+
+
+.homepage {
+    position: relative;
+}
+
+.gallery {
+    max-width: 100%;
+    /* Set the maximum width to prevent overflow */
+    overflow: hidden;
+    /* Hide any content that overflows the container */
+}
+
+.travel-tips-section {
+    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsGVy1Od_kKcGmuX0b_IANAdIl1Oqw4jIOXFigN0dRbry9QVib0skrL5jQgDyYEPSBOa2esWtTQyTmAQKnhyQUgxa2mGpYnsQrIGqoGXzQFHfgNq8ynOzpB2IgKQtmAQXouFzYKoDOEy4/s1600/hikong+kmebel.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    /* Add this line */
+}
+
+.travel-tips-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Adjust the opacity value here */
+}
+
+.travel-tips-section h3,
+.travel-tips-section p {
+    color: #fff;
+    filter: brightness(150%);
+    /* Set text color to white */
+}
+
+.traveltips.fadeIn {
+    opacity: 1;
+    /* Set opacity to 1 for fade-in effect */
+}
+
+.traveltips.fadeOut {
+    opacity: 0;
+    /* Set opacity to 0 for fade-out effect */
+}
+
+#fixedHr,
+#fixedHr2,
+#fixedHr3,
+#fixedHr4,
+#fixedHr5,
+#fixedHr6,
+#fixedHr7,
+#fixedHr8,
+#fixedHr9,
+#fixedHsauna {
+    width: 100%;
+    max-width: 1310px;
+    height: 1px;
+    background-color: rgb(227, 236, 244);
+    border: none;
+    margin: 0 auto;
+}
+
+#fixedHr2 {
+    margin: 50px auto;
+}
+
+#fixedHr3 {
+    margin: 10px auto;
+}
+
+#fixedHr4 {
+    margin: 90px auto;
+}
+
+#fixedHr5,
+#fixedHr6,
+#fixedHr7 {
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+#fixedHr8 {
+    margin: 100px auto;
+}
+
+#fixedHr9{
+    margin: 100px auto;
+}
+
+#fixedHsauna{
+    margin: 100px auto;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.review {
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 10px;
+    /* Add border style */
+    border: 2px solid white;
+    /* Adjust border color, style, and width as needed */
+}
+
+.review.active {
+    opacity: 1;
+}
+
+.slideInLeft {
+    animation: slideInLeftAnimation 0.5s ease;
+}
+
+@keyframes slideInLeftAnimation {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideOutLeft {
+    animation: slideOutLeftAnimation 0.5s ease;
+}
+
+@keyframes slideOutLeftAnimation {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.customer-reviews h1.review-text,
+.customer-reviews p,
+.review .card-title,
+.review .card-text {
+    color: white;
+}
+
+.customerreview .card {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.customerreview .card-body {
+    background-color: transparent;
+    /* Add this line to make the card body transparent */
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-right: 40%;
+    /* Adjust top padding as needed */
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #5f5f63;
+    margin-right: 10px;
+    /* Add margin to separate icon from text */
+    font-size: 24px;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.icon:hover {
+    background-color: #e6ebef;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    /* Add margin between icon-wrapper elements */
+}
+
+.icon-wrapper span {
+    margin-left: 10px;
+    white-space: nowrap;
+    /* Adjust the spacing between the icon and text */
+}
+
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-container img {
+    width: 30px;
+    /* Adjust the width as needed */
+    height: 30px;
+    /* Maintain aspect ratio */
+}
+
+.logo-container:hover .menu {
+    display: block;
+    transform: translateY(0);
+    /* Slide down when hovering over the logo */
+}
+
+.menu-toggle-icon:checked~.logo-container .menu-toggle-icon {
+    display: block;
+}
+
+.menu-toggle-icon {
+    display: none;
+}
+
+.menu-toggle-icon:checked~.menu {
+    display: block;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #f9f9f9;
+    padding: 20px;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu a {
+    display: block;
+    padding: 5px 0;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #ddd;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    margin: 0 0px;
+
+    /* Adjust the horizontal spacing as needed */
+
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  scroll-snap-align: start;
+}

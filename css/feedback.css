@@ -1,0 +1,94 @@
+.feedback {
+            background-position: center;
+            background-size: cover;
+            margin-top: 6rem;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .feedback .container {
+            max-width: 40%;
+            text-align: center;
+            color: white;
+            position: absolute;
+            top: 30;
+            right: 0;
+        }
+
+        .feedback .container h2 {
+            max-width: 40rem;
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        .feedback .container p{
+            
+        }
+
+        .feedback .voices {
+            max-width: 55%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 20px;
+            margin-bottom: 0%;
+            margin-left: 7%;
+        }
+
+        .feedback .voices .voice {
+            flex-basis: calc(50% - 20px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback .voices .voice .comment-container {
+            position: relative;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            height: auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+
+
+        .feedback .voices .voice .rating-stars {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: gold;
+        }
+
+        .feedback .voices .voice .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .feedback .voices .voice .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .feedback .voices .voice .profile .detail li {
+            list-style: none;
+            color: #666;
+        }
+
+        .feedback .voices .voice p {
+            margin-top: 10px;
+            color: #333;
+            line-height: 1.5;
+        }

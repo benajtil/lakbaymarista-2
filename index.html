@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="imgs/lakbay3.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/label.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="login-register.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="/css/feedback.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/featured.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Single+Day&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Righteous&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+    <title>Lakbay Marista</title>
+
+    <style>
+        #carousel1 {
+            padding-top: 30%;
+        }
+
+        .carousel-item img {
+            height: 350px;
+            object-fit: cover;
+            filter: brightness(40%);
+        }
+
+        .carousel-item {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0;
+            background-color: transparent;
+        }
+
+        .carousel-item-next {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .carousel-item-prev {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .carousel-item.active {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+        .carousel-inner {
+            background-color: transparent;
+        }
+
+        .carousel-inner {
+            max-width: 100%;
+            height: 500px;
+
+        }
+
+        .tourlocpic {
+            display: inline-block;
+            height: 700px;
+            margin-top: 30px;
+            width: 500px;
+        }
+
+        .tour-location-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .tour-info {
+            display: flex;
+            margin-left: 80px;
+        }
+
+        .text-info {
+            margin-left: 50px;
+            /* Adjust margin as needed */
+            align-items: right;
+        }
+
+        .review-text {
+            margin-top: 40px;
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            /* Allow items to wrap */
+            width: 400px;
+            height: 100px;
+        }
+
+        .highlight-text {
+            flex-basis: 100%;
+            /* Take full width */
+            margin-left: 80px;
+        }
+
+
+        .icon {
+            margin-right: 10px;
+            /* Adjust margin as needed */
+        }
+
+        hr {
+            margin: 5px 0;
+            border: 0;
+            border-top: 1px solid #faf7f7;
+            /* Adjust color as needed */
+        }
+
+        .travel-memories {
+            padding: 50px 0;
+            background-color: #030303;
+        }
+
+        .travel-memories h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .memory {
+            background-color: #ddd8d8;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 500px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+        }
+
+        .memory:hover {
+            transform: translateY(-5px);
+        }
+
+        .memory:hover:before {
+            transform: translateY(0);
+        }
+
+        .memory img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ede8e8;
+            filter: brightness(100%);
+        }
+
+        .memory h3 {
+            font-size: 20px;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .memory p {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin: 0;
+            opacity: 1;
+
+
+        }
+
+        .touristblogs {
+            display: flex;
+            justify-content: center;
+        }
+
+        .blog-post {
+            margin-bottom: 40px;
+            background-color: transparent;
+            border-radius: 70px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(48, 44, 44, 0.929);
+            color: #ede9e9;
+            position: relative;
+            /* Add this */
+        }
+
+        .blog-post::before {
+            /* Add this */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgq9wPoguSxfQffMS8oAzYacQFbWCQuVP-kRBDpSlq0lnOZa6BZAWndO2zky_x_VfugqsZRFKRkrAOOK_zYHa8ivwjs5WVyqeesof66QDqQSZj8cngqPHrDyDHSkyHj6lTAkY_CKcuet8I/s1600/miss+tboli+2019.jpg');
+            background-size: cover;
+            filter: brightness(25%);
+            /* Move the filter here */
+            z-index: -1;
+            /* Ensure the pseudo-element is behind the content */
+        }
+
+        .blog-image {
+            width: 400px;
+            height: 300px;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .blog-description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #fff;
+            background-color: transparent;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #dee3e8;
+        }
+
+
+    </style>
+
+</head>
+
+<body style="background-color: black;">
+    <header id="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="/imgs/logoLM.png" alt="Bootstrap" width="65" height="65">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: Kanit, sans-serif;"
+                                aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" style="font-size: 100%; font-family: Kanit, sans-serif;"
+                                aria-current="page" href="destination.html">Destinations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 100%; font-family: Kanit, sans-serif;"
+                                aria-current="page" href="aboutus.html">About
+                                Us</a>
+                        </li>
+                    </ul>
+                    <div class="logo-container">
+                        <label for="menuToggle" class="logo">
+                            <img src="/imgs/profile.png" alt="Logo" width="65" height="65">
+                        </label>
+                        <input type="checkbox" id="menuToggle" class="menu-toggle-icon">
+                        <div class="menu" id="menu">
+                            <a href="login.html" id="loginNavItem">Login</a>
+                            <a href="logout.php" id="logoutNavItem" style="display: none;">Logout</a>
+                            <a href="profile.php" id="profileNavItem" style="display: none;">User Profile</a>
+                        </div>
+                    </div>
+                    <form class="d-flex ms-auto" role="search">
+                        <input class="form-control me-2 custom-search-input" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" style="height: 30px;" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="fronthome" class="homepage">
+        <div style="display: flex; justify-content: center;">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"
+                style="width: 100%; height:500px; background-color: #3a3a3a;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active shadow">
+                        <img src="/imgs/tour1.png" class="d-block w-100 h-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <h5 style="text-align: center; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism</strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1">Explore Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item active shadow">
+                        <img src="/imgs/tour5.jpg" class="d-block w-100 h-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <h5 style="text-align: center; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism</strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1">Explore Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item active shadow">
+                        <img src="/imgs/tour2.jpg" class="d-block w-100 h-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <h5 style="text-align: center; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism</strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1">Explore Destinations</button>
+                        </div>
+                    </div>
+                    <<div class="carousel-item active shadow">
+                        <img src="/imgs/tour4.png" class="d-block w-100 h-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <h5 style="text-align: center; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism</strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1">Explore Destinations</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item active shadow">
+                        <img src="/imgs/tour6.jpg" class="d-block w-100 h-100" alt="...">
+                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center"
+                            style="height: 100%;">
+                            <h5 style="text-align: center; font-family: Kanit, sans-serif; font-size: 200%">
+                                <strong>Lakbay Marista Tourism</strong>
+                            </h5>
+                            <p style="padding-bottom: 0%; font-family: 'Cabin', sans-serif;">Explore The Best Tourist
+                                Destinations in South Cotabato and Plan your Next Adventure!</p>
+                            <button type="button" class="btn btn-dark" id="exploreBtn1">Explore Destinations</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <h1 class="Featured Destination"
+        style="text-align: center; padding-top: 5%; font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+        <strong>Featured Destinations</strong>
+    </h1>
+    <h2 class="Destination"
+        style="text-align: center; padding-top: 2%; font-size: 100%; font-family: 'Cabin', sans-serif; color: rgb(230, 236, 241) !important;">
+        <strong>Discover our hand-picked destinations for your next trip</strong>
+    </h2>
+    <h2 style="padding-top: 3%;"></h2>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <a href="destination.html">
+            <button type="button" style="height: 50px; font-size: 16px; width: 200px; font-family: 'Cabin', sans-serif;"
+                class="btn btn-light" id="exploreBtn4">View All</button>
+        </a>
+    </div>
+
+    <hr id="fixedHsauna">
+
+    <section class="gallery" style="padding-top: 0px">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <a href="zip.html">
+                        <img src="/imgs/zip.jpg" class="gallery-item" alt="gallery">
+                        <div class="label"
+                            style="position: absolute; background-color: rgba(240, 231, 231, 0.7); color: #131212; border-radius: 5px;">
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="divinemercy.html">
+                        <img src="/imgs/divine.jpg" class="gallery-item" style="height: 83%;" alt="gallery">
+                        <div class="label"
+                            style="position: absolute; background-color: rgba(240, 231, 231, 0.7); color: #131212; border-radius: 5px;">
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="lakeholon.html">
+                        <img src="/imgs/holon.jpg" class="gallery-item" style="height: 83%;" alt="gallery">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <hr id="fixedHr">
+
+
+
+    <div class="container mt-5 travel-tips-section">
+        <div class="row justify-content-center">
+            <div class="traveltips">
+                <h3 class="col" style="font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+                    <strong>Travel Tips</strong>
+                </h3>
+                <p class="useful" style="font-family: Kanit, sans-serif; color: rgb(230, 236, 241) !important;">
+                    Useful Information and tips for your Travel
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5 justify-content-center">
+            <div class="col">
+                <div class="card card1">
+                    <h5 style="font-family: Kanit, sans-serif;">What to pack for a trip?</h5>
+                    <p style="height: 5%;"></p>
+                    <p style="color: rgb(247, 248, 249); font-family: Kanit, sans-serif;">Plan your packing wisely.
+                        Ensure you've got the basics covered - clothes, toiletries, and any must-have items for your
+                        journey.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card2">
+                    <h5 style="font-family: Kanit, sans-serif;">Make copies of important documents
+                    </h5>
+                    <p style="height: 5%;"></p>
+                    <p style="color: rgb(247, 248, 249); font-family: Kanit, sans-serif;">Ensuring you have copies of
+                        important documents is crucial for your peace of mind while traveling. Take the time to make
+                        duplicates of essential paperwork such as your passport, visa, travel insurance documents, and
+                        itinerary.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card3">
+                    <h5 style="font-family: Kanit, sans-serif;">Stay vigilant of your environment.</h5>
+                    <p style="height: 5%;"></p>
+                    <p style="color: rgb(247, 248, 249); font-family: Kanit, sans-serif;">Remain observant and stay
+                        attuned to your surroundings at all times. Be conscious of the people, places, and events around
+                        you. Keep an eye out for any unusual or suspicious activities, and trust your instincts if
+                        something feels off.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card4">
+                    <h5 style="font-family: Kanit, sans-serif;">Stay Connected: Share Your Adventures with Loved Ones
+                    </h5>
+                    <p style="height: 5%;"></p>
+                    <p style="color: rgb(247, 248, 249); font-family: Kanit, sans-serif;">Keeping your friends and
+                        family updated on your adventures, you'll not only stay connected with them but also share the
+                        joy and excitement of exploring new places and cultures. So, don't forget to share the love and
+                        spread the wanderlust!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <hr id="fixedHr2">
+
+
+    <section class="feedback">
+        <div class="container">
+            <h2 class="labelrev" style="font-family: Kanit, sans-serif;">Customer Reviews</h2>
+            <p style="font-family: Kanit, sans-serif;">Read what our customers have to say about their <br> travel experiences</p>
+            <div style="width: 100%; display: flex; justify-content: center;">
+                <button type="button" style="height: 50px; font-size: 16px; padding: 0 0px; width: 40%;" class="btn btn-light" id="exploreBtn4" onclick="toggleReviewForm()">Write a Review</button>
+            </div>
+            <div id="reviewForm" style="display: none;">
+                <form action="submit_review.php" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="designation" class="form-label">Designation</label>
+                        <input type="text" class="form-control" id="designation" name="designation" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="review" class="form-label">Review</label>
+                        <textarea class="form-control" id="review" name="review" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        </div>
+        <div class="voices">
+            <div class="voice box1" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Til.jpg" alt="">
+                        <div class="detail">
+                            <li>Ben Florence A.J Til</li>
+                            <li>Poging Nilalang</li>
+                        </div>
+                    </div>
+                    <p>"Visited Lake Sebu this weekend and was absolutely mesmerized by the serene beauty of the lake
+                        and its surroundings. The Seven Falls Zipline is a must-try for adrenaline junkies. The view
+                        from the top is breathtaking!"</p>
+                </div>
+            </div>
+            <div class="voice box2" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Sadio.png" alt="">
+                        <div class="detail">
+                            <li>Ford Bryant Sadio</li>
+                            <li>Senior High School</li>
+                        </div>
+                    </div>
+                    <p>"T’boli tribe's cultural immersion is a profound experience. Learning about their traditional
+                        weaving and the story behind the T'nalak fabric has given me a deeper appreciation for their
+                        culture. South Cotabato is not just beautiful in scenery but rich in culture."</p>
+                </div>
+            </div>
+            <div class="voice box3" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Buendicho.png" alt="">
+                        <div class="detail">
+                            <li>Crisan Josh Buendicho</li>
+                            <li>POGI</li>
+                        </div>
+                    </div>
+                    <p>"The hike up Mount Matutum was challenging but totally worth it. The flora along the way is
+                        fascinating, and the view from the peak is just spectacular. It's a must-visit for nature lovers
+                        and hikers visiting South Cotabato."</p>
+                </div>
+            </div>
+            <div class="voice box4" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Habaradas.png" alt="">
+                        <div class="detail">
+                            <li>Angelo Habaradas</li>
+                            <li>I LOVE YOU KITZ</li>
+                        </div>
+                    </div>
+                    <p>"Spent a day exploring the quaint town of Koronadal and was pleasantly surprised by the warmth of
+                        the locals and the delicious local cuisine. The food here has a unique taste that you won't find
+                        anywhere else. Don't miss out on the local coffee!"</p>
+                </div>
+            </div>
+            <div class="voice box5" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Pomperada.png" alt="">
+                        <div class="detail">
+                            <li>Cris Dein Pomperada</li>
+                            <li>Kulot Traveler</li>
+                        </div>
+                    </div>
+                    <p>"The Sultan Kudarat Monument is not just a place to snap photos but a site that tells the rich
+                        history of the region. Standing there, you feel a connection to the past and an appreciation for
+                        the peace and unity the province enjoys today."</p>
+                </div>
+            </div>
+            <div class="voice box6" data-display-duration="5">
+                <div class="comment-container">
+                    <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="profile">
+                        <img src="imgs\reviews\Gonatice.png" alt="">
+                        <div class="detail">
+                            <li>Stanley Ernst Gonatice</li>
+                            <li>BONJING</li>
+                        </div>
+                    </div>
+                    <p>"The South Cotabato Provincial Capitol building caught my eye with its stunning architecture. The
+                        surrounding park is a perfect spot to relax after a day of touring. There's a sense of pride and
+                        beauty in every corner of this place."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr id="fixedHr3">
+
+    <div class="tour-location-container">
+        <div class="tour-info">
+            <img class="tourlocpic" src="/imgs/colorwheel.JPG">
+            <div class="text-info">
+                <h1 class="review-text" style="font-family: Kanit, sans-serif;">Tour Location</h1>
+                <p style="font-family: Kanit, sans-serif;">Check out our exciting tour packages tailored for
+                    different interests.</p>
+                <div class="icons">
+                    <div class="icon-wrapper">
+                        <a href="adventuretour.html" class="icon"><i class="fas fa-hiking"></i></a>
+                        <span style="color: #faf7f7;">Adventure Tours</span>
+                    </div>
+                    <p class="highlight-text" style="opacity: 0.5;">For Adrenaline Junkies</p>
+                    <hr>
+                    <div class="icon-wrapper">
+                        <a href="swimmingpools.html" class="icon"><i class="fas fa-swimmer"></i></a>
+                        <span style="color: #faf7f7;">Swimming Pool</span>
+                    </div>
+                    <p class="highlight-text" style="opacity: 0.5;">Relax and Unwind</p>
+                    <hr>
+                    <div class="icon-wrapper">
+                        <a href="cityexploration.html" class="icon"><i class="fas fa-camera"></i></a>
+                        <span style="color: #faf7f7;">City/Municipality Explorations</span>
+                    </div>
+                    <p class="highlight-text" style="opacity: 0.5;">Immerse in Urban Culture</p>
+                    <hr style="border-top: 1px solid white;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr id="fixedHr4">
+
+    <section class="travel-memories">
+        <div class="container">
+            <h2 style="color: #faf8f8; font-family: Kanit, sans-serif;">Travel Memories</h2>
+            <div id="memoryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/kamayadan.JPG" alt="Travel Memory 1">
+                                    <h3 style="font-family: Kanit, sans-serif;">Kamayadan Festival</h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Nanardx<br>Every month of
+                                        March the Municipality of Norala in South
+                                        Cotabato celebrates the
+                                        Kamayadan Festival, a colorful and joyful celebration of the town’s rich
+                                        agricultural harvests, governance’s feats, and a showcasing of the people’s
+                                        culture and traditions.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/tnalak.JPG" alt="Travel Memory 2">
+                                    <h3 style="font-family: Kanit, sans-serif;">T'nalak Festival</h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Nanardx<br>Every month of
+                                        July, the vibrant province of South
+                                        Cotabato, nestled in the heart
+                                        of Mindanao, comes alive with a spectacular burst of colors, beats of
+                                        traditional music, and the rich aroma of local cuisine. This is the T'nalak
+                                        Festival, a celebration like no other, paying homage to South Cotabato's rich
+                                        culture and history, and the beautiful handwoven fabric - the T'nalak of the
+                                        Tboli's.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/tboliknoon.jpg" alt="Travel Memory 3">
+                                    <h3 style="font-family: Kanit, sans-serif;">T'boli Illuminated</h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Denn Jib Seblos<br>This
+                                        photo was taken during the culmination of
+                                        the Seslong Festival 2019. The
+                                        foreground clearly shows TBOLI KNOON, simply put, it means beautiful T'Boli. It
+                                        serves as a greeting to visitors and tourists, and also a reminder to the
+                                        locals. The fireworks were just added bonus to the already spectacular scene.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/matutumpineapple.jpg" alt="Travel Memory 1">
+                                    <h3 style="font-family: Kanit, sans-serif;">Mt. Matutum and the Hypnotic Stars</h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Ramil Leonida<br>Mt.
+                                        Matutum had been the
+                                        subject of many landscape photos from sunrise til sunset. During the night, its
+                                        also one of the best subject while shooting for the stars in the night sky.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/tunneloflights.jpg" alt="Travel Memory 2">
+                                    <h3 style="font-family: Kanit, sans-serif;">Tunnel of Lights
+                                    </h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Aleli Faith Cabahug<br>Step
+                                        into a world of enchantment at the
+                                        Kasadya Christmas Village in Surallah, South Cotabato, where the Tunnel of
+                                        Lights ignites the spirit of the season with its mesmerizing glow. Experience
+                                        the magic and make memories that sparkle forever.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="memory">
+                                    <img src="/imgs/kayakholon.jpg" alt="Travel Memory 3">
+                                    <h3 style="font-family: Kanit, sans-serif;">Kayaking is more fun at Lake Holon</h3>
+                                    <p style="font-family: Kanit, sans-serif;">Photographer: Jeniel Buday<br>Enjoy the
+                                        fresh air and lush green sceneries while
+                                        paddling in the crystal clear water of majestic Lake Holon. Kayaking is another
+                                        outdoor activity attraction offered for campers and guests of Lake Holon in
+                                        Tboli, South Cotabato.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#memoryCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#memoryCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <hr id="fixedHr8">
+
+    <section class="touristblogs">
+        <article class="blog-post" style="text-align: center;">
+
+            <div class="blog-content">
+                <h2 class="blog-title" style="font-family: Kanit, sans-serif;">Exploring the Hidden Gems of Nature</h2>
+
+                <p class="blog-description" style="font-family: Kanit, sans-serif;">Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Integer nec odio.
+                    Praesent libero.
+                    Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+                <p class="blog-description" style="font-family: Kanit, sans-serif;">Duis sagittis ipsum. Praesent
+                    mauris. Fusce nec tellus sed augue semper
+                    porta.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </article>
+    </section>
+
+
+
+
+
+    <footer>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.522981476037!2d124.79467961536269!3d6.400731525128591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x324f90d9f4e2dbd9%3A0xe0f1a2f0b025dfe2!2sSouth%20Cotabato!5e0!3m2!1sen!2sph!4v1647439427365!5m2!1sen!2sph"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <section class="footer">
+            <div class="container">
+                <div class="detail">
+                    <h3>Lakbay Marista</h3>
+                    <p style="font-family: Kanit, sans-serif;">Embark on unforgettable adventures with Lakbay Marista -
+                        your ultimate guide to immersive travel
+                        experiences, where every journey is a story waiting to be told</p>
+                    <h5>get in touch</h5>
+                    <a href="#">GROUP4@mail.com</a>
+                    <div class="social">
+                        <a href="#"><i class="fa            fa-linkedin-square"></i></a>
+                        <a href="#"><i class="fa fa-facebook-square"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square"></i></a>
+                    </div>
+                </div>
+                <div class="about-us">
+                    <h4>about us</h4>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Term</a></li>
+                </div>
+                <div class="about-us">
+                    <h4>help</h4>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Booking Guide</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </div>
+                <div class="about-us">
+                    <h4>Resources</h4>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Gallery</li>
+                    <li><a href="#">Offers</a></li>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div>
+                    &copy;2024 - Lakbay Marista, Inc, All Rights Reserved
+                </div>
+                <div>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <div id="reviews">
+
+    </div>
+
+    <?php include 'display_reviews.php'; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="button.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="animation.js"></script>
+    <script src="reviewsliding.js"></script>
+    <script src="headeranimation.js"></script>
+    <script src="gallerynisha.js"></script>
+    <script>
+        function setPosition() {
+            const feedbackSection = document.querySelector('.feedback');
+            const container = document.querySelector('.container');
+            const feedbackWidth = feedbackSection.offsetWidth;
+            const containerWidth = container.offsetWidth;
+
+            container.style.right = `${(feedbackWidth - containerWidth) / 2}px`;
+        }
+
+
+        setPosition();
+        window.addEventListener('resize', setPosition);
+
+    </script>
+    <script>
+        function checkLoggedIn() {
+            var isLoggedIn = sessionStorage.getItem('loggedIn');
+            return isLoggedIn === 'true';
+        }
+
+
+        function toggleLoginLogout() {
+            var loginNavItem = document.getElementById('loginNavItem');
+            var logoutNavItem = document.getElementById('logoutNavItem');
+
+            if (checkLoggedIn()) {
+                loginNavItem.style.display = 'none';
+                logoutNavItem.style.display = 'block';
+            } else {
+
+                loginNavItem.style.display = 'block';
+                logoutNavItem.style.display = 'none';
+            }
+        }
+
+
+        toggleLoginLogout();
+
+
+        function login() {
+
+            sessionStorage.setItem('loggedIn', 'true');
+
+
+            toggleLoginLogout();
+        }
+
+
+        function logout() {
+
+            sessionStorage.setItem('loggedIn', 'false');
+
+
+            toggleLoginLogout();
+        }
+    </script>
+    <script>
+
+        const voices = document.querySelectorAll('.voice');
+
+        function getRandomVoices() {
+            const randomIndex1 = Math.floor(Math.random() * voices.length);
+            let randomIndex2;
+            do {
+                randomIndex2 = Math.floor(Math.random() * voices.length);
+            } while (randomIndex2 === randomIndex1);
+
+            return [voices[randomIndex1], voices[randomIndex2]];
+        }
+
+        function fadeIn(element) {
+            element.style.opacity = '0';
+            element.style.display = 'block';
+            let opacity = 0;
+            const interval = setInterval(() => {
+                if (opacity < 1) {
+                    opacity += 0.10; // Adjust the increment for smoother fading
+                    element.style.opacity = opacity;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 40); // Reduce interval for smoother effect
+        }
+
+        function fadeOut(element) {
+            let opacity = 1;
+            const interval = setInterval(() => {
+                if (opacity > 0) { // Change the condition to stop at opacity 0
+                    opacity -= 0.10; // Adjust the decrement for smoother fading
+                    element.style.opacity = opacity;
+                } else {
+                    clearInterval(interval);
+                    element.style.display = 'none';
+                }
+            }, 40);
+        }
+
+        function showRandomComments() {
+            voices.forEach(voice => {
+                voice.style.display = 'none';
+            });
+
+            const [voice1, voice2] = getRandomVoices();
+
+            fadeIn(voice1);
+            fadeIn(voice2);
+
+
+        }
+
+        showRandomComments();
+
+        setInterval(showRandomComments, 5000);
+
+    </script>
+
+    <script>
+        function toggleReviewForm() {
+            var reviewForm = document.getElementById('reviewForm');
+            if (reviewForm.style.display === 'none') {
+                reviewForm.style.display = 'block';
+            } else {
+                reviewForm.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+
+</html>

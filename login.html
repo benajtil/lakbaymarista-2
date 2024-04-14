@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login-register.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+
+    <div class="container" id="container">
+        <div id="successMessage" class="alert alert-success" role="alert" style="display: none;">
+            <strong>Success!</strong> You have successfully logged in.
+        </div>
+
+        <div id="errorMessage" class="alert alert-danger" role="alert" style="display: none;">
+            <strong>Error!</strong> Invalid email or password. Please try again.
+        </div>
+
+        <div class="form-container sign-up-container">
+            <button type="button" id="cancelButton" onclick="cancelRegistration()">X    </button>
+            <form id="signupForm" method="post" action="register.php">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="name" name="name" id="name" placeholder="Name" required />
+                <span id="nameError" class="error"></span>
+                <input type="email" name="email" id="email" placeholder="Email" required />
+                <span id="emailError" class="error"></span>
+                <input type="password" name="password" id="password" placeholder="Password" required />
+                <span id="passwordError" class="error"></span>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required />
+                <span id="confirmPasswordError" class="error"></span>
+                <button type="submit" id="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <button type="button" id="cancelButton" onclick="cancelRegistration()">X</button>
+            <form action="login.php" method="post">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <a href="#">Forgot your password?</a>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cancelRegistration() {
+            window.location.href = "index.html";
+        }
+        $(document).ready(function () {
+
+            $("#signUp").click(function () {
+                $("#container").addClass("right-panel-active");
+            });
+
+
+            $("#signIn").click(function () {
+                $("#container").removeClass("right-panel-active");
+            });
+
+
+            $("#signupForm").submit(function (event) {
+                event.preventDefault();
+
+                var name = $("#name").val();
+                var password = $("#password").val();
+                var confirm_password = $("#confirm_password").val();
+                var email = $("#email").val();
+
+                $(".error").text("");
+
+                if (name === "") {
+                    displayError("name", "Name is required");
+                    return;
+                }
+
+                if (password === "") {
+                    displayError("password", "Password is required");
+                    return;
+                }
+                if (password.length < 8) {
+                    displayError("password", "Password must be at least 8 characters");
+                    return;
+                }
+                if (confirm_password === "") {
+                    displayError("confirmPassword", "Confirm Password is required");
+                    return;
+                }
+                if (password !== confirm_password) {
+                    displayError("confirmPassword", "Passwords do not match");
+                    return;
+                }
+                if (email === "") {
+                    displayError("email", "Email is required");
+                    return;
+                }
+                $.ajax({
+                    url: "register.php",
+                    method: "POST",
+                    data: {
+                        name: name,
+                        password: password,
+                        confirm_password: confirm_password,
+                        email: email,
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        if (response.trim() === 'success') {
+                            $("#successPopup").show();
+                            setTimeout(function () {
+                                window.location.href = "index.html";
+                            }, 2000);
+                        } else {
+                            displayError("email", response);
+                        }
+                    },
+
+                    error: function (xhr, status, error) {
+                        displayError("email", "An error occurred. Please try again later.");
+                    }
+                });
+            });
+        });
+
+        function displayError(inputFieldId, message) {
+            $("#" + inputFieldId + "Error").text(message);
+        }
+
+    </script>
+</body>
+
+</html>

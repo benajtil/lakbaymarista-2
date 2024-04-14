@@ -1,0 +1,38 @@
+.gallery-item-container {
+    display: inline-block;
+    position: relative;
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.container {
+    width: 300%; /* Adjust based on the number of items */
+}
+
+.col {
+    flex: 0 0 33.33%; /* Adjust based on the number of items */
+}
+
+.gallery-item img {
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    animation: animateGalleryItem 0.5s ease;
+}
+
+@keyframes animateGalleryItem {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

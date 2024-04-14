@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Sebu Zipline Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="shortcut icon" type="x-icon" href="imgs/lakbay3.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #050505;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #777;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-caption {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #040404;
+            color: #ddd;
+            padding: 20px;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .modal-img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+        }
+
+        .close {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Add these styles within the <style> section */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lake Sebu ZipLine</h1>
+    </header>
+
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-image"></i> Gallery</a>
+        
+    </nav>
+
+    <main>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/68/a2/2b/photo6jpg.jpg?w=1200&h=-1&s=1"
+                    alt="Gallery Image 1">
+                <div class="gallery-item-caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/78/bc/9f/photo0jpg.jpg?w=1000&h=-1&s=1"
+                    type="video/mp4">
+
+                <div class="gallery-item-caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/79/a1/06/photo1jpg.jpg?w=1200&h=-1&s=1">
+                <div class="gallery-item-caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://thehappytrip.com/wp-content/uploads/2017/02/PC100230.jpg">
+                <div class="gallery-item-caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://thehappytrip.com/wp-content/uploads/2017/02/15400472_10154159390458017_1702978018742908873_n.jpg"></div>
+            </div>
+            <!-- Add more gallery items here -->
+        </div>
+    </main>
+    <div class="modal" id="myModal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption" class="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.querySelectorAll('.gallery-item img');
+        var modalImg = document.getElementById("modalImg");
+        var captionText = document.getElementById("caption");
+        img.forEach(function (imgElement) {
+            imgElement.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.nextElementSibling.innerHTML;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+    <footer>
+        <p>&copy; Lakbay Marista, Inc, All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-kit-id.js"></script>
+
+
+</body>
+
+</html>
