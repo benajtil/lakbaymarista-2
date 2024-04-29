@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; // Change this to your database server name if different
 $username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password if set
+$password = "Til091002"; // Change this to your database password if set
 $dbname = "lakbaymarista"; // Change this to your database name
 
 
