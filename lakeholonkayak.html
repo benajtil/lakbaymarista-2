@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Memories | Lakbay Marista</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your custom stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .memory {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .memory:hover {
+            transform: translateY(-5px);
+        }
+
+        .memory img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .memory-content {
+            padding: 20px;
+        }
+
+        .memory h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            font-family: Kanit, sans-serif;
+        }
+
+        .memory p {
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-family: Kanit, sans-serif;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            overflow: auto;
+        }
+
+        .lightbox img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+            max-height: 80%;
+            margin-top: 10%;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 9999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Travel Memories</h1>
+        <div class="memories-grid">
+            <div class="memory" onclick="openLightbox()">
+                <img src="/imgs/kayakholon.jpg" alt="Travel Memory 3">
+                <div class="memory-content">
+                    <h3>Kayaking is more fun at Lake Holon</h3>
+                    <p>Photographer: Jeniel Buday<br>Enjoy the fresh air and lush green sceneries while paddling in the crystal clear water of majestic Lake Holon. Kayaking is another outdoor activity attraction offered for campers and guests of Lake Holon in Tboli, South Cotabato.</p>
+                </div>
+            </div>
+            <!-- Add more memories here -->
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-image" src="" alt="Lightbox Image">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Memory Details</h2>
+        <p>Photographer: Jeniel Buday</p>
+        <p>Location: Lake Holon, South Cotabato</p>
+        <p>Description: Enjoy kayaking in the crystal clear water of Lake Holon surrounded by lush green sceneries.</p>
+    </div>
+
+    <script>
+        function openLightbox() {
+            document.querySelector('.lightbox').style.display = 'block';
+            document.querySelector('body').style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.querySelector('.lightbox').style.display = 'none';
+            document.querySelector('body').style.overflow = 'auto';
+        }
+
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
