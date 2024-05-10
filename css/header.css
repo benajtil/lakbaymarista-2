@@ -29,12 +29,11 @@
 
 .navbar-nav {
     font-family: 'Cabin', sans-serif;
-    
     /* Change margin-left to auto */
     max-width: 100%;
     display: flex;
     align-items: center;
-    margin-left: 750px;
+    margin-left: 0px;
     /* Set a maximum width for the navbar-nav */
 
 }

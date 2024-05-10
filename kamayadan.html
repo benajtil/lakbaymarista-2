@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Memories | LM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .memory {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .memory:hover {
+            transform: translateY(-5px);
+        }
+
+        .memory img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .memory-content {
+            padding: 20px;
+        }
+
+        .memory h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .memory p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Sidebar Widget */
+        .sidebar {
+            background-color: #0e0c0c;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            position: fixed;
+            top: 500px;
+            right: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            color: #bbb;
+        }
+
+        /* Adjust main content width to accommodate sidebar */
+        .main-content {
+            flex: 1;
+            margin-right: 240px; /* Width of sidebar plus some margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>Travel Memories</h1>
+            <div class="memory">
+                <img src="/imgs/kamayadan.JPG" alt="Kamayadan Festival">
+                <div class="memory-content">
+                    <h3>Kamayadan Festival</h3>
+                    <p>Photographer: Nanardx<br>Every month of March the Municipality of Norala in South Cotabato celebrates the Kamayadan Festival, a colorful and joyful celebration of the town’s rich agricultural harvests, governance’s feats, and a showcasing of the people’s culture and traditions.</p>
+                </div>
+            </div>
+            <!-- Add more memories -->
+            <div class="memory1">
+                <img src="https://gttp.imgix.net/224894/x/0/kadayawan-festival-davao-history-schedule-and-local-tips-4.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883" alt="Kamayadan Festival">
+                <div class="memory-content">
+                    <h3>Munch on the best food of Davao</h3>
+                    <p>When you drop by during the festival, many restaurants will have discounts and promos ongoing, so use this to your <br> advantage! Try local cuisine, attend a boodle fight, or sample their fresh fruits and desserts. There will also be indigenous <br> food served at the Panamnam Food Hall.</p>
+                </div>
+            </div>
+            <div class="memory2">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilzesfAIIrJZ9_esTBNeAYzNYWqoyYES0Dq5t3VGZDP_F-bFLt5ifRSn5RHb9mXFq3RitXCm8ZnrpavIiMqEy275pparNqR_VxQg5zTt1doeyf2ZEs7Du44indw067JAWp8PRxZkOGmlU7/s1600/kamayadan.jpg" style="height: auto; width:50%" alt="Kamayadan Festival">
+                <div class="memory-content">
+                    
+                    <p>Aside from the colorful Kasadyahan sa Kapatagan street dancing competition, another highlight of the annual Kamayadan <br> Festival in the Municipality of Norala in South Cotabato is the Bahay Kubo and Product Display Competition.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar Widget -->
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
